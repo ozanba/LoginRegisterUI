@@ -43,30 +43,28 @@
         android:fontFamily="@font/montserrat"
         android:text="@string/WelcomeLabelDesc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="96dp"
         android:layout_marginTop="32dp"
         app:endIconContentDescription="mail icon"
         app:endIconDrawable="@drawable/mail"
         app:endIconMode="custom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintWidth_percent="0.85">
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputEmailText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:background="@drawable/rectangle_text_background"
             android:fontFamily="@font/montserrat"
-            android:hint="Enter your email"
+            android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
             android:padding="16dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -74,7 +72,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputPassword"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="96dp"
         android:layout_marginTop="16dp"
         app:endIconContentDescription="lock icon"
         app:endIconDrawable="@drawable/lock"
@@ -86,10 +84,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputPasswordText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:background="@drawable/rectangle_text_background"
             android:fontFamily="@font/montserrat"
-            android:hint="Password"
+            android:hint="@string/password_hint"
             android:inputType="textPassword"
             android:padding="16dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -118,7 +116,7 @@
         app:layout_constraintTop_toTopOf="@+id/checkbox_remember" />
 
     <Button
-        android:id="@+id/next_button"
+        android:id="@+id/login_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -141,8 +139,8 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/registerNowLabel"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/next_button"
-        app:layout_constraintTop_toBottomOf="@+id/next_button" />
+        app:layout_constraintStart_toStartOf="@+id/login_button"
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
     <TextView
         android:id="@+id/registerNowLabel"
@@ -150,11 +148,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:fontFamily="@font/montserrat"
-        android:text="Register Now"
+        android:text="@string/register_label"
         android:textColor="#6C63FF"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/new_member"
-        app:layout_constraintEnd_toEndOf="@+id/next_button"
+        app:layout_constraintEnd_toEndOf="@+id/login_button"
         app:layout_constraintStart_toEndOf="@+id/new_member"
         app:layout_constraintTop_toTopOf="@+id/new_member" />
 

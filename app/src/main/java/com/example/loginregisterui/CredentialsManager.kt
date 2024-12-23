@@ -2,9 +2,9 @@ package com.example.loginregisterui
 
 import kotlin.text.equals
 
-class CredentialsManager {
-    val credentialsMap = mutableMapOf((Pair("test@te.st", "1234")))
+object CredentialsManager {
 
+    private val credentialsMap = mutableMapOf((Pair("test@te.st", "1234")))
 
     fun isEmailValid(email: String): Boolean {
         if (email.isEmpty()) return false
@@ -20,7 +20,7 @@ class CredentialsManager {
         return fullName.isNotEmpty()
     }
 
-    fun isPhoneNumberValid(phoneNumber: String): Boolean{
+    fun isPhoneNumberValid(phoneNumber: String): Boolean {
         return phoneNumber.isNotEmpty()
     }
 
@@ -28,13 +28,19 @@ class CredentialsManager {
         return credentialsMap[email.lowercase()].equals(password)
     }
 
-    fun register(fullName: String, email: String, phoneNumber: String, password: String) : Boolean {
-        if (!credentialsMap.containsKey(email.lowercase())) {
-            credentialsMap[email] = password
-            return true
+    fun register(fullName: String, email: String, phoneNumber: String, password: String): String {
+        if (credentialsMap.containsKey(email.lowercase())) {
+            return "Email is already taken"
+        } else {
+            if (isFullNameValid(fullName) &&
+                isEmailValid(email) &&
+                isPhoneNumberValid(phoneNumber) &&
+                isPasswordValid(password)
+            ) {
+                credentialsMap[email] = password
+                return "New account registered successfully"
+            }
         }
-        else {
-            return false
-        }
+        return "Registration failure"
     }
 }
